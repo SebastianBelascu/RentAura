@@ -1,7 +1,7 @@
 'use server'
 
 import db from './db';
-import {profileSchema, validateWithZodSchema} from "@/utils/schemas";
+import {imageSchema, profileSchema, validateWithZodSchema} from "@/utils/schemas";
 import {clerkClient, currentUser} from "@clerk/nextjs/server";
 import {redirect} from "next/navigation";
 import {revalidatePath} from "next/cache";
@@ -17,6 +17,15 @@ const renderError = (error: unknown):{message: string} => {
     console.log(error);
     return {message: error instanceof Error ? error.message : 'An error ocured!'};
 }
+
+export const updateProfileImageAction = async (
+    prevState: any,
+    formData: FormData
+): Promise<{ message: string }> => {
+    const image = formData.get('image') as File;
+    const validatedFields = validateWithZodSchema(imageSchema, { image });
+    return { message: 'Profile image updated successfully' };
+};
 
 export const createProfileAction = async (prevState: any, formData:FormData) => {
 

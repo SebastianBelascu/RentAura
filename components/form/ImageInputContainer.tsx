@@ -1,3 +1,5 @@
+'use client'
+
 import React, {useState} from 'react'
 import {actionFunction} from "@/utils/types";
 import {LucideUser2} from "lucide-react";

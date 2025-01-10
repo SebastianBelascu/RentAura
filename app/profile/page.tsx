@@ -1,5 +1,5 @@
 import React from 'react'
-import {createProfileAction, fetchProfile, updateProfileAction} from "@/utils/actions";
+import {createProfileAction, fetchProfile, updateProfileAction, updateProfileImageAction} from "@/utils/actions";
 import FormContainer from "@/components/form/FormContainer";
 import FormInput from "@/components/form/FormInput";
 import {SubmitButton} from "@/components/form/Buttons";
