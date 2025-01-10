@@ -5,6 +5,7 @@ import {imageSchema, profileSchema, validateWithZodSchema} from "@/utils/schemas
 import {clerkClient, currentUser} from "@clerk/nextjs/server";
 import {redirect} from "next/navigation";
 import {revalidatePath} from "next/cache";
+import {uploadImage} from "@/utils/supabase";
 
 const getAuthUser = async() => {
     const user = await currentUser();
@@ -40,7 +41,7 @@ export const updateProfileImageAction = async (
         revalidatePath('/profile');
         return { message: 'Profile image updated successfully' };
     } catch (error) {
-
+        throw new Error('Update profile image failed!');
     }
 
 };
