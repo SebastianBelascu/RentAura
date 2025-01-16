@@ -1,3 +1,5 @@
+'use client';
+
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import FormContainer from '../form/FormContainer';
@@ -20,10 +22,9 @@ function FavoriteToggleForm({
     pathname,
   });
   return (
-    <FormContainer action={toggleFavoriteAction}>
+    <FormContainer action={toggleAction}>
       <CardSubmitButton isFavorite={favoriteId ? true : false} />
     </FormContainer>
   );
 }
-
 export default FavoriteToggleForm;
