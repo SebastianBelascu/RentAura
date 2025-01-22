@@ -7,7 +7,7 @@ function PropertyRating({
   propertyId: string;
   inPage: boolean;
 }) {
-  console.log(propertyId);
+  console.log('id ' + propertyId);
   const rating = 4.7;
   const count = 100;
 
