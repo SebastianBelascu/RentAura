@@ -7,6 +7,7 @@ import Description from '@/components/properties/Description';
 import ImageContainer from '@/components/properties/ImageContainer';
 import PropertyDetails from '@/components/properties/PropertyDetails';
 import UserInfo from '@/components/properties/Userinfo';
+import SubmitReview from '@/components/reviews/SubmitReview';
 import { fetchPropertyDetails } from '@/utils/actions';
 import { Separator } from '@radix-ui/react-dropdown-menu';
 import { redirect } from 'next/navigation';
@@ -45,6 +46,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
           <BookingCalendar />
         </div>
       </section>
+      <SubmitReview propertyId={property.id} />
     </section>
   );
 }
