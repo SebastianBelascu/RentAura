@@ -7,6 +7,7 @@ import Description from '@/components/properties/Description';
 import ImageContainer from '@/components/properties/ImageContainer';
 import PropertyDetails from '@/components/properties/PropertyDetails';
 import UserInfo from '@/components/properties/Userinfo';
+import PropertyReviews from '@/components/reviews/PropertyReviews';
 import SubmitReview from '@/components/reviews/SubmitReview';
 import { fetchPropertyDetails } from '@/utils/actions';
 import { Separator } from '@radix-ui/react-dropdown-menu';
@@ -47,6 +48,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
         </div>
       </section>
       <SubmitReview propertyId={property.id} />
+      <PropertyReviews propertyId={property.id} />
     </section>
   );
 }
