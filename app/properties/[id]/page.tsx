@@ -1,7 +1,6 @@
 import FavoriteToggleButton from '@/components/card/FavoriteToggleButton';
 import PropertyRating from '@/components/card/PropertyRating';
 import Amenities from '@/components/properties/Amenities';
-import BookingCalendar from '@/components/properties/BookingCalendar';
 import BreadCrumbs from '@/components/properties/BreadCrumbs';
 import Description from '@/components/properties/Description';
 import ImageContainer from '@/components/properties/ImageContainer';
@@ -13,6 +12,15 @@ import { fetchPropertyDetails, findExistingReview } from '@/utils/actions';
 import { Separator } from '@radix-ui/react-dropdown-menu';
 import { redirect } from 'next/navigation';
 import { auth } from '@clerk/nextjs/server';
+import { Skeleton } from '@/components/ui/skeleton';
+
+const DynamicBookingWrapper = dynamic(
+  () => import('@/components/booking/BookingWrapper'),
+  {
+    ssr: false,
+    loading: () => <Skeleton className='h-[200px] w-full' />,
+  }
+);
 
 async function PropertyDetailsPage({ params }: { params: { id: string } }) {
   const property = await fetchPropertyDetails(params.id);
@@ -50,7 +58,11 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
           <Amenities amenities={property.amenities} />
         </div>
         <div className='lg:col-span-4 flex flex-col items-center'>
-          <BookingCalendar />
+          <DynamicBookingWrapper
+            propertyId={property.id}
+            price={property.price}
+            bookings={property.bookings}
+          />
         </div>
       </section>
       {reviewDoesNotExist && <SubmitReview propertyId={property.id} />}
