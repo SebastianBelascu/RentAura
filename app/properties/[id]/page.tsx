@@ -13,6 +13,7 @@ import { Separator } from '@radix-ui/react-dropdown-menu';
 import { redirect } from 'next/navigation';
 import { auth } from '@clerk/nextjs/server';
 import { Skeleton } from '@/components/ui/skeleton';
+import dynamic from 'next/dynamic';
 
 const DynamicBookingWrapper = dynamic(
   () => import('@/components/booking/BookingWrapper'),

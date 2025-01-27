@@ -23,7 +23,6 @@ function BookingWrapper({ propertyId, price, bookings }: BookingWrapperProps) {
   return (
     <>
       <BookingCalendar />
-      <BookingCalendar />
     </>
   );
 }
