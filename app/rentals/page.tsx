@@ -1,3 +1,5 @@
+import { IconButton } from '@/components/form/Buttons';
+import FormContainer from '@/components/form/FormContainer';
 import EmptyList from '@/components/home/EmptyList';
 import {
   Table,
@@ -7,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { fetchRentals } from '@/utils/actions';
+import { deleteRentalAction, fetchRentals } from '@/utils/actions';
 import { formatCurrency } from '@/utils/format';
 import Link from 'next/link';
 import React from 'react';
@@ -51,12 +53,27 @@ async function RentalsPage() {
                 <TableCell>{formatCurrency(price)}</TableCell>
                 <TableCell>{totalNightsSum || 0}</TableCell>
                 <TableCell>{formatCurrency(orderTotalSum)}</TableCell>
+                <TableCell className='flex items-center gap-x-2'>
+                  <Link href={`/rentals/${propertyId}/edit`}>
+                    <IconButton actionType='edit' />
+                  </Link>
+                  <DeleteRental propertyId={propertyId} />
+                </TableCell>
               </TableRow>
             );
           })}
         </TableBody>
       </Table>
     </div>
+  );
+}
+
+function DeleteRental({ propertyId }: { propertyId: string }) {
+  const deleteRental = deleteRentalAction.bind(null, { propertyId });
+  return (
+    <FormContainer action={deleteRental}>
+      <IconButton actionType='delete' />
+    </FormContainer>
   );
 }
 
