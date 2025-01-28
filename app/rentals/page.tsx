@@ -6,6 +6,7 @@ import {
   TableBody,
   TableCaption,
   TableCell,
+  TableHead,
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
@@ -26,16 +27,16 @@ async function RentalsPage() {
   }
   return (
     <div className='mt-16'>
-      <h4 className='mb-4 capitalize'>active properties : {rentals.length}</h4>
+      <h4 className='mb-4 capitalize'>Active Properties : {rentals.length}</h4>
       <Table>
         <TableCaption>A list of all your properties.</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHeader>Property Name</TableHeader>
-            <TableHeader>Nightly Rate</TableHeader>
-            <TableHeader>Nights Booked</TableHeader>
-            <TableHeader>Total Income</TableHeader>
-            <TableHeader>Actions</TableHeader>
+            <TableHead>Property Name</TableHead>
+            <TableHead>Nightly Rate </TableHead>
+            <TableHead>Nights Booked</TableHead>
+            <TableHead>Total Income</TableHead>
+            <TableHead>Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -46,16 +47,19 @@ async function RentalsPage() {
               <TableRow key={propertyId}>
                 <TableCell>
                   <Link
-                    className='underline text-muted-foreground tracking-wide'
                     href={`/properties/${propertyId}`}
-                  />
+                    className='underline text-muted-foreground tracking-wide'
+                  >
+                    {name}
+                  </Link>
                 </TableCell>
                 <TableCell>{formatCurrency(price)}</TableCell>
                 <TableCell>{totalNightsSum || 0}</TableCell>
                 <TableCell>{formatCurrency(orderTotalSum)}</TableCell>
+
                 <TableCell className='flex items-center gap-x-2'>
                   <Link href={`/rentals/${propertyId}/edit`}>
-                    <IconButton actionType='edit' />
+                    <IconButton actionType='edit'></IconButton>
                   </Link>
                   <DeleteRental propertyId={propertyId} />
                 </TableCell>
