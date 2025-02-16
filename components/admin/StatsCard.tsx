@@ -3,7 +3,7 @@ import React from 'react';
 
 type StatsCardProps = {
   title: string;
-  value: number;
+  value: number | string;
 };
 
 function StatsCard({ title, value }: StatsCardProps) {
