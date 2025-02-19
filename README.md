@@ -26,18 +26,21 @@ This is a **full-stack Airbnb clone** built with **Next.js**. The platform allow
 ## 📸 Project Screenshots
 
 🔐 Login / Register
+<br />
 Secure authentication with Clerk.
 <br />
 <img src="public/airbnb_clerk.png" />
 <br />
 
 🏠 Home Page
+<br />
 Main landing page showing property listings.
 <br />
 <img src="public/airbnb_homepage.png" />
 <br />
 
 ✏️ Creating & Editing Property
+<br />
 Users can create and edit property listings dynamically.
 <br />
 <img src="public/airbnb_creater1.png" />
@@ -56,18 +59,21 @@ Renters can book properties for a specific period
 <br />
 
 🏠 Reservation Tab on Owner's Property
+<br />
 Property owners can see all upcoming and past reservations.
 <br />
 <img src="public/airbnb_reservation.png" />
 <br />
 
 📖 My Rentals
+<br />
 Users can view all properties they have rented.
 <br />
 <img src="public/airbnb_myrentals.png" />
 <br />
 
 ⭐ Reviews & Ratings
+<br />
 Users can leave and read reviews for properties.
 <br />
 <img src="public/airbnb_review.png" />
@@ -76,18 +82,21 @@ Users can leave and read reviews for properties.
 <br />
 
 ❤️ Favorite Tab
+<br />
 Save favorite properties for quick access.
 <br />
 <img src="public/airbnb_favorite.png" />
 <br />
 
 💳 Stripe Checkout
+<br />
 Secure payment processing with Stripe.
 <br />
 <img src="public/airbnb_checkout.png" />
 <br />
 
 🛠 Admin Dashboard
+<br />
 Manage users, properties, and bookings.
 <br />
 <img src="public/airbnb_admin.png" />
