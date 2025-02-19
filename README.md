@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏡 Rent Aura
 
-## Getting Started
+This is a **full-stack Airbnb clone** built with **Next.js**. The platform allows users to **rent properties**, **leave reviews**, **filter listings**, and **process payments with Stripe**. It also includes an **admin dashboard** for managing properties and bookings.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 🔑 **Authentication with Clerk (Login / Register)**
+- ✅ **Full form validation**
+- 🏠 **List and rent properties for specific dates**
+- 💳 **Stripe integration for secure payments**
+- ⭐ **Leave and view property reviews**
+- 🔎 **Search & filter listings by location, price, and availability**
+- 🛠 **Admin dashboard for managing properties and users**
+- ⚡ **Optimized UI with Tailwind CSS**
+- 📂 **Responsive design for mobile and desktop**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend:** Next.js, React, Tailwind CSS
+- **Authentication:** Clerk (for user login & register)
+- **Payments:** Stripe API
+- **Database:** PostgreSQL (via Supabase and Prisma)
+- **Backend:** Next.js API Routes
+- **Deployment:** Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📸 Project Screenshots
 
-## Learn More
+🔐 Login / Register
+Secure authentication with Clerk.
+<br />
+<img src="public/airbnb_clerk.png" />
+<br />
 
-To learn more about Next.js, take a look at the following resources:
+🏠 Home Page
+Main landing page showing property listings.
+<br />
+<img src="public/airbnb_homepage.png" />
+<br />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+✏️ Creating & Editing Property
+Users can create and edit property listings dynamically.
+<br />
+<img src="public/airbnb_creater1.png" />
+<br />
+<img src="public/airbnb_creater2.png" />
+<br />
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📅 Booking Property
+Renters can book properties for a specific period
+<br />
+<img src="public/airbnb_post1.png" />
+<br />
+<img src="public/airbnb_calendar.png" />
+<br />
+<img src="public/airbnb_booking.png" />
+<br />
 
-## Deploy on Vercel
+🏠 Reservation Tab on Owner's Property
+Property owners can see all upcoming and past reservations.
+<br />
+<img src="public/airbnb_reservation.png" />
+<br />
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📖 My Rentals
+Users can view all properties they have rented.
+<br />
+<img src="public/airbnb_myrentals.png" />
+<br />
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⭐ Reviews & Ratings
+Users can leave and read reviews for properties.
+<br />
+<img src="public/airbnb_review.png" />
+<br />
+<img src="public/airbnb_post2.png" />
+<br />
+
+❤️ Favorite Tab
+Save favorite properties for quick access.
+<br />
+<img src="public/airbnb_favorite.png" />
+<br />
+
+💳 Stripe Checkout
+Secure payment processing with Stripe.
+<br />
+<img src="public/airbnb_checkout.png" />
+<br />
+
+🛠 Admin Dashboard
+Manage users, properties, and bookings.
+<br />
+<img src="public/airbnb_admin.png" />
+<br />
