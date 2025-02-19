@@ -25,21 +25,21 @@ This is a **full-stack Airbnb clone** built with **Next.js**. The platform allow
 
 ## 📸 Project Screenshots
 
-🔐 Login / Register
+### 🔐 Login / Register
 <br />
 Secure authentication with Clerk.
 <br />
 <img src="public/airbnb_clerk.png" />
 <br />
 
-🏠 Home Page
+### 🏠 Home Page
 <br />
 Main landing page showing property listings.
 <br />
 <img src="public/airbnb_homepage.png" />
 <br />
 
-✏️ Creating & Editing Property
+### ✏️ Creating & Editing Property
 <br />
 Users can create and edit property listings dynamically.
 <br />
@@ -48,7 +48,7 @@ Users can create and edit property listings dynamically.
 <img src="public/airbnb_creater2.png" />
 <br />
 
-📅 Booking Property
+### 📅 Booking Property
 Renters can book properties for a specific period
 <br />
 <img src="public/airbnb_post1.png" />
@@ -58,21 +58,21 @@ Renters can book properties for a specific period
 <img src="public/airbnb_booking.png" />
 <br />
 
-🏠 Reservation Tab on Owner's Property
+### 🏠 Reservation Tab on Owner's Property
 <br />
 Property owners can see all upcoming and past reservations.
 <br />
 <img src="public/airbnb_reservation.png" />
 <br />
 
-📖 My Rentals
+### 📖 My Rentals
 <br />
 Users can view all properties they have rented.
 <br />
 <img src="public/airbnb_myrentals.png" />
 <br />
 
-⭐ Reviews & Ratings
+### ⭐ Reviews & Ratings
 <br />
 Users can leave and read reviews for properties.
 <br />
@@ -81,21 +81,21 @@ Users can leave and read reviews for properties.
 <img src="public/airbnb_post2.png" />
 <br />
 
-❤️ Favorite Tab
+### ❤️ Favorite Tab
 <br />
 Save favorite properties for quick access.
 <br />
 <img src="public/airbnb_favorite.png" />
 <br />
 
-💳 Stripe Checkout
+### 💳 Stripe Checkout
 <br />
 Secure payment processing with Stripe.
 <br />
 <img src="public/airbnb_checkout.png" />
 <br />
 
-🛠 Admin Dashboard
+### 🛠 Admin Dashboard
 <br />
 Manage users, properties, and bookings.
 <br />
