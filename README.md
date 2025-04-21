@@ -54,6 +54,19 @@ Renters can book properties for a specific period
 <img src="public/airbnb_booking.png" />
 <br />
 
+### 🤖 AI Chatbot Assistant
+An intelligent assistant that helps users search for properties and make bookings quickly and easily.
+<br />
+<img src="public/airbnb_chatbot1.png" />
+<br />
+
+🗣️ Conversational search: Find the perfect property through natural dialogue (e.g., "Looking for a cozy cabin in Aspen for next weekend.")
+
+📅 Smart booking assistance: The bot can guide users through selecting dates, checking availability, and completing the booking process.
+
+💬 Instant support: Quickly answers common questions about listings, pricing, availability, and more.
+
+
 ### 🏠 Reservation Tab on Owner's Property
 Property owners can see all upcoming and past reservations.
 <br />
@@ -91,3 +104,5 @@ Manage users, properties, and bookings.
 <br />
 <img src="public/airbnb_admin.png" />
 <br />
+
+
