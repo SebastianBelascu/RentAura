@@ -78,7 +78,7 @@ function CategoriesList({
                 >
                   <article
                     className={`p-3 flex flex-col items-center cursor-pointer duration-300 hover:text-primary w-[100px] ${
-                      isActive ? 'text-primary' : ''
+                      isActive ? 'text-primary ' : ''
                     }`}
                   >
                     <item.icon className="w-8 h-8" />
