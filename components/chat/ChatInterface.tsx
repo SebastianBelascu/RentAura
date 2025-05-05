@@ -183,6 +183,12 @@ export default function ChatInterface() {
                     }`}
                   >
                     {formatMessage(message)}
+                    {message.role === 'assistant' && 
+                     message.content.includes('You must be registered to access the chatbot') && (
+                      <div className="mt-2">
+                        Sign In / Register
+                      </div>
+                    )}
                   </div>
                   
                   {message.role === 'user' && (

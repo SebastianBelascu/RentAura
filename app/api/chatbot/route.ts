@@ -7,6 +7,14 @@ import { calculateTotals } from '@/utils/calculateTotals';
 // Initialize OpenAI client
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
+  dangerouslyAllowBrowser: false,
+  baseURL: "https://api.openai.com/v1",
+  defaultHeaders: {
+    "OpenAI-Beta": "assistants=v1"
+  },
+  defaultQuery: {
+    "api-version": "2023-05-15"
+  }
 });
 
 // Define message types for better type safety
@@ -39,11 +47,16 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
     // Get authenticated user
     const auth = getAuth(req);
+    
+    // Check if user is authenticated
     if (!auth?.userId) {
-      return NextResponse.json(
-        { error: 'Unauthorized' },
-        { status: 401 }
-      );
+      // Return a response indicating the user needs to register
+      return NextResponse.json({
+        message: {
+          role: 'assistant',
+          content: 'You must be registered to access the chatbot. Please sign up or log in to continue.'
+        }
+      });
     }
 
     // Get user profile from database
@@ -51,12 +64,10 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       where: { clerkId: auth.userId },
     });
 
-    if (!profile) {
-      return NextResponse.json(
-        { error: 'Profile not found' },
-        { status: 404 }
-      );
-    }
+    // Create user context string
+    const userContext = profile 
+      ? `The current user is ${profile.firstName} ${profile.lastName}.` 
+      : `The current user has an account but no profile information.`;
 
     // Parse request body
     const { messages, propertyId, checkIn, checkOut }: ChatbotRequest = await req.json();
@@ -66,7 +77,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       role: 'system',
       content: `You are a helpful assistant for Rent Aura, a property rental application. 
       You can help users check property availability and make bookings.
-      The current user is ${profile.firstName} ${profile.lastName}.
+      ${userContext}
       Today's date is ${new Date().toISOString().split('T')[0]}.
       Keep responses friendly, concise, and helpful.`
     };
@@ -249,7 +260,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
             });
             
             console.log('Creating booking for property:', property.name);
-            console.log('User ID:', profile.clerkId);
+            console.log('User ID:', auth.userId);
             console.log('Check-in:', targetCheckIn);
             console.log('Check-out:', targetCheckOut);
             
@@ -260,7 +271,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
                 checkOut: new Date(targetCheckOut),
                 orderTotal,
                 totalNights,
-                profileId: profile.clerkId,
+                profileId: auth.userId,
                 propertyId: targetPropertyId,
                 paymentStatus: false, // Set to false initially
               },
